@@ -1,1 +1,13 @@
-/* Add application styles & imports to this file! */
+/* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~ng-snotify/styles/material";
+@import "~font-awesome/css/font-awesome.css";
+.ng-valid[required],
+.ng-valid.required {
+    border: 1px solid #42A948;
+}
+
+.ng-invalid:not(form) {
+    border: 1px solid #a94442;
+}

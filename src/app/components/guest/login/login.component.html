@@ -1,0 +1,32 @@
+<div class="col-sm-8 offset-2">
+    <div class="card">
+        <div class="card-header bg-primary text-white">Sgin In</div>
+        <div class="card-body">
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <label for="email" class="col-form-label">Email</label>
+                        <input [(ngModel)]="form.email" name="email" type="email" class="form-control" id="email" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <label for="password" class="col-form-label">Password</label>
+                        <input [(ngModel)]="form.password" name="password" type="password" class="form-control" id="password" autocomplete="true" placeholder="Password" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <button [disabled]="!loginForm.valid" type="submit" class="btn btn-block btn-primary">Sign in</button>
+                    </div>
+                </div>
+            </form>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <a [routerLink]="['/request-passwrd-reset']" class="float-left">Forgot Password</a>
+                    <a [routerLink]="['/sign-up']" class="float-right">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

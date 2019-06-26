@@ -1,0 +1,80 @@
+<div class="col-sm-8 offset-2">
+    <div class="card">
+        <div class="card-header bg-primary text-white">Sgin In</div>
+        <div class="card-body">
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <label for="name" class="col-form-label">Name</label>
+                        <input [(ngModel)]="form.name" name="name" type="text" class="form-control" id="name" placeholder="Name" required>
+                        <span class="text-danger" [hidden]="!error?.name">{{error?.name}}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <label for="dob" class="col-form-label">Date of Birth</label>
+                        <div class="input-group">
+                            <input [(ngModel)]="form.dob" ngbDatepicker #d="ngbDatepicker" name="dob" type="text" class="form-control" id="dob" placeholder="Date of Birth" required>
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-calendar" (click)="d.toggle()"></i></div>
+                            </div>
+                            <span class="text-danger" [hidden]="!error?.dob">{{error?.dob}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <label for="sex" class="col-form-label">Sex</label>
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input [(ngModel)]="form.sex" class="form-check-input" type="radio" name="sex" id="sex0" value="male" required>
+                            <label class="form-check-label" for="sex0">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input [(ngModel)]="form.sex" class="form-check-input" type="radio" name="sex" id="sex1" value="female" required>
+                            <label class="form-check-label" for="sex1">Female</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input [(ngModel)]="form.sex" class="form-check-input" type="radio" name="sex" id="sex2" value="others" required>
+                            <label class="form-check-label" for="sex2">Others</label>
+                        </div>
+                        <span class="text-danger" [hidden]="!error?.sex">{{error?.sex}}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <label for="mobile" class="col-form-label">Mobile</label>
+                        <input [(ngModel)]="form.mobile" name="mobile" type="text" class="form-control" id="mobile" placeholder="Mobile" required>
+                        <span class="text-danger" [hidden]="!error?.mobile">{{error?.mobile}}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <label for="email" class="col-form-label">Email</label>
+                        <input [(ngModel)]="form.email" name="email" type="email" class="form-control" id="email" placeholder="Email" required>
+                        <span class="text-danger" [hidden]="!error?.email">{{error?.email}}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <label for="password" class="col-form-label">Password</label>
+                        <input [(ngModel)]="form.password" name="password" type="password" class="form-control" id="password" autocomplete="true" placeholder="Password" required>
+                        <span class="text-danger" [hidden]="!error?.password">{{error?.password}}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <label for="password_confirmation" class="col-form-label">Confirm Password</label>
+                        <input [(ngModel)]="form.password_confirmation" name="password_confirmation" type="password" class="form-control" id="password_confirmation" autocomplete="true" placeholder="Confirm Password" required>
+                        <span class="text-danger" [hidden]="!error?.password_confirmation">{{error?.password_confirmation}}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <button [disabled]="!loginForm.valid" type="submit" class="btn btn-block btn-primary">Sign in</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
